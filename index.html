@@ -8,6 +8,8 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23D6EEF0'/%3E%3Cellipse cx='20' cy='20' rx='5' ry='11' fill='%23D9577B'/%3E%3C/svg%3E">
 
 
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Tiro+Devanagari+Sanskrit&display=swap">
@@ -261,7 +263,9 @@ input[type=range]{width:100%;accent-color:var(--lake)}
 .search input:focus{outline:none}
 .search:focus-within{border-color:var(--lake)}
 .card .pd{position:absolute;bottom:8px;left:10px;font-family:var(--display);font-weight:700;font-size:.75rem;background:var(--card);border-radius:999px;padding:1px 8px;color:var(--accent)}
-.foot{margin-top:48px;font-size:.85rem;color:var(--ink-soft);text-align:center;max-width:62ch;margin-inline:auto}
+.foot{margin-top:48px;padding-top:20px;border-top:2px solid var(--line);font-size:.85rem;color:var(--ink-soft);text-align:center;max-width:62ch;margin-inline:auto;display:grid;gap:8px}
+.foot .credit{font-family:var(--display);font-size:1.05rem;color:var(--ink)}
+.foot .credit b{color:var(--lotus)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 [hidden]{display:none!important}
 </style>
@@ -278,6 +282,10 @@ input[type=range]{width:100%;accent-color:var(--lake)}
     <button class="ghost" id="stopAll" type="button" hidden>Stop voice</button>
   </header>
   <main id="app"></main>
+  <footer class="foot" id="homeFoot">
+    <p class="credit">Simplified by <b>Surinder Dhanjal</b></p>
+    <p>Sanskrit text, transliteration and English translation follow <i>Patanjali Yoga Sutras</i> with commentary by Swami Vivekananda. Lines in quotation marks are Swamiji's own words; everything else is a simplified retelling for young readers.</p>
+  </footer>
 </div>
 
 <!-- ======== Rich extra content for Sutra 1.2 ======== -->
@@ -9312,7 +9320,6 @@ function home(p){
   <div class="soon"><h4>Jump to a sutra</h4>
     <div class="dots">${Array.from({length:P.total},(_,i)=>{const r=ready.find(s=>s.n===i+1);return r?`<a class="dot ready" href="#s${P.id}-${i+1}" title="${r.title}">${i+1}</a>`:`<span class="dot" title="Coming soon">${i+1}</span>`}).join('')}</div>
   </div>`;
-  app.insertAdjacentHTML('beforeend',`<p class="foot">Sanskrit text, transliteration and English translation follow <i>Patanjali Yoga Sutras</i> with commentary by Swami Vivekananda. Lines in quotation marks are Swamiji's own words; everything else is a simplified retelling for young readers.</p>`);
   app.querySelectorAll('.pada').forEach(b=>b.onclick=()=>{go('p'+b.dataset.p);document.querySelector('.pada-head').scrollIntoView({behavior:'smooth',block:'start'});});
   const q=document.getElementById('q'), wrap=document.getElementById('cardsWrap'), head=app.querySelector('.pada-head');
   q.oninput=()=>{const v=q.value.trim().toLowerCase();
@@ -9388,6 +9395,7 @@ document.addEventListener('click',e=>{ const a=e.target.closest('a[href^="#"]');
 window.addEventListener('popstate',e=>route((e.state&&e.state.h)||location.hash.slice(1)));
 function route(hh){ stop(); if(lakeRAF){cancelAnimationFrame(lakeRAF);lakeRAF=null;}
   const h=typeof hh==='string'?hh:location.hash.slice(1); let m;
+  document.getElementById('homeFoot').hidden=/^s\d-\d+$/.test(h);
   if((m=h.match(/^s(\d)-(\d+)$/))) detail(+m[1],+m[2]);
   else if((m=h.match(/^p(\d)$/))) {home(+m[1]);}
   else home(1);
