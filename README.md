@@ -1,4 +1,4 @@
-# Yoga Sutras for Young Minds
+# Patanjali's Yoga Sutras for Young Minds
 
 Patanjali's 195 Yoga Sutras retold for children (around age 10), with an animated picture for every sutra, word-by-word meanings and Sanskrit read-aloud. Based on Swami Vivekananda's translation and commentary.
 

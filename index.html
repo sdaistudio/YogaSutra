@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Yoga Sutras for Young Minds</title>
+<title>Patanjali's Yoga Sutras for Young Minds</title>
 <meta name="description" content="Patanjali's Yoga Sutras retold for children, with pictures, animations and Sanskrit read-aloud. Based on Swami Vivekananda's translation and commentary.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23D6EEF0'/%3E%3Cellipse cx='20' cy='20' rx='5' ry='11' fill='%23D9577B'/%3E%3C/svg%3E">
 
@@ -345,14 +345,14 @@ input[type=range]{width:100%;accent-color:var(--lake)}
   <header class="bar">
     <a class="brand" href="#home" aria-label="Home">
       <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" style="fill:var(--lake-soft)"/><g style="fill:var(--lotus)"><ellipse cx="20" cy="20" rx="5" ry="11"/><ellipse cx="20" cy="22" rx="5" ry="10" transform="rotate(-40 20 30)"/><ellipse cx="20" cy="22" rx="5" ry="10" transform="rotate(40 20 30)"/></g><path d="M8 31 Q20 27 32 31" fill="none" style="stroke:var(--lake)" stroke-width="2.5" stroke-linecap="round"/></svg>
-      Yoga Sutras for Young Minds
+      Patanjali's Yoga Sutras for Young Minds
     </a>
     <div class="bar-r"><a class="maplink" href="#map"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="currentColor"/><circle cx="4.5" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="19.5" cy="5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="4.5" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="19.5" cy="19" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9.6 10 6.3 6.6M14.4 10l3.3-3.4M9.6 14l-3.3 3.4M14.4 14l3.3 3.4" stroke="currentColor" stroke-width="1.8"/></svg>Mind map</a><button class="ghost" id="stopAll" type="button" hidden>Stop voice</button></div>
   </header>
   <main id="app"></main>
   <footer class="foot" id="homeFoot">
     <p class="credit">Simplified by <b>Surinder Dhanjal</b></p>
-    <p>English translation and quotations are Swami Vivekananda's own words, following the editions published in his lifetime (London, 1896, and the 1899 edition of <i>Raja Yoga</i>). Everything else is a simplified retelling for young readers.</p>
+    <p>The English translation and quotations of Patanjali's Yoga Sutras are Swami Vivekananda's own words, following the editions published in his lifetime (London, 1896, and the 1899 edition of <i>Raja Yoga</i>). Everything else is a simplified retelling for young readers.</p>
   </footer>
 </div>
 
@@ -9421,7 +9421,7 @@ function playWords(s,btn){ stop(); btn.classList.add('speaking'); const chips=[.
   function svg(W, H, o = {}) {
     const L = layout(W, H, o), fs = o.fs || 12.5, fsR = o.fsR || 10.5, out = [];
     const cR = o.centerR || 70, pR = o.padaR || 54;
-    out.push(`<svg class="mm" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mind map of the Yoga Sutras">`);
+    out.push(`<svg class="mm" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mind map of Patanjali's Yoga Sutras">`);
     // pada -> theme curves
     L.padas.forEach(({ P, x, y, sx }, i) => P.themes.forEach((t, j) => {
       const n = L.nodes[t.k], tx = sx < 0 ? n.x + n.w : n.x, ty = n.y + n.h / 2, mx = (x + tx) / 2;
@@ -9471,8 +9471,8 @@ function mapView(){
   app.className='';
   const D=MINDMAP.DATA;
   app.innerHTML=`<section class="mapv">
-    <div class="map-head"><div><span class="eyebrow-m">The whole book</span><h1>One map, 195 sutras</h1>
-      <p>Start at the centre and travel clockwise: focus, practice, powers, freedom. Tap any box to see its sutras. The numbered dashed lines show how ideas connect across chapters.</p></div>
+    <div class="map-head"><div><span class="eyebrow-m">Patanjali's Yoga Sutras</span><h1>One map, 195 sutras</h1>
+      <p>All of Patanjali's Yoga Sutras on one page. Start at the centre and travel clockwise: focus, practice, powers, freedom. Tap any box to see its sutras. The numbered dashed lines show how ideas connect across chapters.</p></div>
       <div class="zoom"><button class="ghost" id="zo" type="button" aria-label="Zoom out">−</button><button class="ghost" id="zr" type="button">Fit</button><button id="zi" type="button" aria-label="Zoom in">+</button></div></div>
     <div class="mm-wrap"><div class="mm-inner" id="mmInner">${MINDMAP.svg(1140,860,{colW:228,gapC:58,nodeH:44})}</div></div>
     <div class="map-below">
@@ -9516,7 +9516,7 @@ function home(p){
   <section class="hero">
     <div>
       <div class="skt">पातञ्जलयोगसूत्राणि</div>
-      <h1>The Yoga Sutras, for <span>Young Minds</span></h1>
+      <h1>Patanjali's Yoga Sutras, for <span>Young Minds</span></h1>
       <p>195 tiny sentences, written over 2,000 years ago by the sage Patanjali, about how to calm your mind. Each one is retold here in pictures, with Swami Vivekananda as our guide. Tap a card to explore it, and press the speaker to hear the Sanskrit.</p>
       <div class="stats"><div><b>4</b>Padas</div><div><b>${total}</b>Sutras</div></div>
       <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M16 16l5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><input id="q" type="search" placeholder="Search: mind, breath, 2.46, friendship…" aria-label="Search sutras"></label>
